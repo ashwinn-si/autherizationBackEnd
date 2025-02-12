@@ -12,7 +12,7 @@ const internRoutes = require("./routes/internRoutes")
 app.use(express.json())
 app.use(cors({
     credentials: true,
-    origin: "https://autherization-front-end-git-master-ashwin-s-is-projects.vercel.app/"
+    origin: "https://autherization-front-end-git-master-ashwin-s-is-projects.vercel.app"
 }));
 app.use(cookieParser())
 
