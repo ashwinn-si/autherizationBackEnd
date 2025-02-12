@@ -21,7 +21,12 @@ const loginInController = async(req, res) => {
 
         const teamName = await teamNameGetter(email,user.role)
 
-        const token = await jwt.sign({email : email , role : user.role,teamName}, process.env.JWT_SCERET ,{expiresIn: "1h"})
+        const token = await jwt.sign(
+            { email: email, role: user.role, teamName: teamName },
+            process.env.JWT_SECRET, 
+            { expiresIn: "15m" }
+        );
+        
 
         res.cookie("jwtToken", token, {
             secure: true,
