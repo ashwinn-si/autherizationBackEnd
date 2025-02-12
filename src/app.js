@@ -12,9 +12,7 @@ const internRoutes = require("./routes/internRoutes")
 app.use(express.json())
 app.use(cors({
     credentials: true,
-    origin: (origin, callback) => {
-        callback(null, true);
-    }
+    origin: "https://autherization-front-ksg8p0pea-ashwin-s-is-projects.vercel.app/"
 }));
 app.use(cookieParser())
 
