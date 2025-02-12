@@ -24,12 +24,12 @@ const loginInController = async(req, res) => {
         const token = await jwt.sign({email : email , role : user.role,teamName}, process.env.JWT_SCERET ,{expiresIn: "1h"})
 
         res.cookie("jwtToken", token, {
-            domain: "https://autherizationbackend.onrender.com",
             secure: true,
             httpOnly: true,
             sameSite: "none",
             maxAge: 60 * 60 * 1000
         });
+        
 
         res.status(200).json({message:"user logined", role : user.role, teamName})
     }
