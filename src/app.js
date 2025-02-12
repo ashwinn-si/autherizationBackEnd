@@ -12,8 +12,10 @@ const internRoutes = require("./routes/internRoutes")
 app.use(express.json())
 app.use(cors({
     credentials: true,
-    origin: "*"
-}))
+    origin: (origin, callback) => {
+        callback(null, true);
+    }
+}));
 app.use(cookieParser())
 
 //routes
