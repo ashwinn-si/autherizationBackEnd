@@ -10,23 +10,11 @@ const internRoutes = require("./routes/internRoutes")
 
 //middleware
 app.use(express.json())
-const allowedOrigins = [
-    "https://autherization-front-ksg8p0pea-ashwin-s-is-projects.vercel.app",
-    "http://localhost:3000"
-];
-
-// CORS Configuration
 app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error("Not allowed by CORS"));
-        }
-    },
-    credentials: true
+    credentials: true,
+    origin: "https://autherization-front-ksg8p0pea-ashwin-s-is-projects.vercel.app"
 }));
-
+app.use(cookieParser())
 
 //routes
 app.use("/api/auth",authRoutes)

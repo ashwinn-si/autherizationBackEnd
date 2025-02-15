@@ -32,7 +32,7 @@ const loginInController = async(req, res) => {
         );
         
         res.cookie("jwtToken", token, {
-            
+            secure: true,
             httpOnly: true,
             sameSite: "none",
             maxAge: 60 * 60 * 1000
@@ -42,7 +42,7 @@ const loginInController = async(req, res) => {
         res.status(200).json({message:"user logined", role : user.role, teamName})
     }
     catch(err){
-        res.json({message: err})
+        res.status(500).json({message: err})
     }
 }
 module.exports = loginInController;
