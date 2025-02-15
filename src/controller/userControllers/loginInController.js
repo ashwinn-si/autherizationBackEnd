@@ -42,8 +42,7 @@ const loginInController = async(req, res) => {
         res.status(200).json({message:"user logined", role : user.role, teamName})
     }
     catch(err){
-        
-        res.status(500).json({message:"internal server error"})
+        res.status(500).json({message: err})
     }
 
 
