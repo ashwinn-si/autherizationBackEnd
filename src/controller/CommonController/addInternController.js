@@ -1,5 +1,5 @@
-const teamModel = require("./../../model/teamModel")
-const userModel = require("./../../model/userModel")
+const teamModel = require("../../model/teamModel")
+const userModel = require("../../model/userModel")
 const bcrypt = require("bcrypt");
 require("dotenv").config();
 

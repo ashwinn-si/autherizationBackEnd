@@ -1,4 +1,4 @@
-const teamModel = require("./../../model/teamModel")
+const teamModel = require("../../model/teamModel")
 
 const deleteTaskController = async(req, res) =>{
         try{

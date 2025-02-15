@@ -6,7 +6,7 @@ const tokenVerification = (req, res, next) => {
     if(!token){
         return res.status(401).json({message : "Token missing"})
     }
-    jwt.verify(token, process.env.JWT_SCERET, (err, decoded) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
         if(err) return res.status(404).json({message : "Token invalid ", error: err})
         req.user = decoded;
         next()

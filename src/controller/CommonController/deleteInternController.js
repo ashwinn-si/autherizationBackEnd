@@ -1,5 +1,5 @@
-const teamModel = require("./../../model/teamModel")
-const userModel = require("./../../model/userModel")
+const teamModel = require("../../model/teamModel")
+const userModel = require("../../model/userModel")
 
 const deleteInternController = async( req, res) => {
     try{
@@ -13,8 +13,6 @@ const deleteInternController = async( req, res) => {
     }catch(err){
         res.status(500).json({message : "Error while deleting intern"})
     }
-
-
 }
 
 module.exports = deleteInternController;

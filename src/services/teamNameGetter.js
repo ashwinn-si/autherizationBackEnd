@@ -24,7 +24,7 @@ async function teamNameFromTeamLeader(email) {
 }
 
 async function teamNameGetter(email, role) {
-    if (role === "admin") return "";
+    if (role === "admin") return "admin";
     if (role === "team leader") {
         return await teamNameFromTeamLeader(email);
     } else {

@@ -1,4 +1,4 @@
-const teamModel = require("./../../model/teamModel")
+const teamModel = require("../../model/teamModel")
 
 const infoGetterController = async (req, res) => {
     try{
